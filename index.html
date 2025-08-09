@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Victory & Odam - Save the Date</title>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        emailjs.init("b04gOheXRu9kUv-f1");
+      })();
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap");
+
+      :root {
+        --primary-color: #8b4513;
+        --secondary-color: #d4a76a;
+        --accent-color: #e8c39e;
+        --text-color: #333;
+        --light-color: #f9f5f0;
+        --modal-bg: rgba(0, 0, 0, 0.7);
+        --ribbon-color: #d4a76a;
+        --ribbon-shadow: #ae7729;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: var(--light-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 20px;
+        background-image: url("https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(249, 245, 240, 0.55);
+        z-index: 0;
+      }
+
+      .container {
+        position: relative;
+        margin-bottom: 60px;
+        margin-top: 60px;
+        z-index: 1;
+        max-width: 600px;
+        width: 100%;
+        height: 50%;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        overflow: hidden;
+        border: 1px solid var(--accent-color);
+      }
+
+      .invitation-card {
+        padding: 40px;
+        height: 70%;
+        text-align: center;
+        background-color: #000;
+      }
+      /* Base Ribbon Styles */
+      .ribbon-bow {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+      }
+
+      /* Bow Center Knot */
+      .ribbon-bow::before {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background: var(--ribbon-shadow);
+        border-radius: 10%;
+        z-index: 3;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Bow Loops */
+      .ribbon-bow::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 30px;
+        background: var(--ribbon-color);
+        border-radius: 20% 20% 0 0;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+      }
+
+      /* Ribbon Tails */
+      .ribbon-tail {
+        position: absolute;
+        background: var(--ribbon-color);
+        width: 60px;
+        height: 12px;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Ribbon Folds */
+      .ribbon-fold {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: var(--ribbon-shadow);
+        transform: rotate(45deg);
+        z-index: 3;
+      }
+
+      /* Top Left Ribbon */
+      .ribbon-tl {
+        top: 0;
+        left: 0;
+      }
+      .ribbon-tl::before {
+        top: 30px;
+        left: 30px;
+      }
+      .ribbon-tl::after {
+        top: 15px;
+        left: 20px;
+        transform: rotate(-45deg);
+      }
+      .ribbon-tl .ribbon-tail {
+        top: 40px;
+        left: 40px;
+        transform: rotate(45deg);
+      }
+      .ribbon-tl .ribbon-fold {
+        top: 35px;
+        left: 35px;
+      }
+
+      /* Top Right Ribbon */
+      .ribbon-tr {
+        top: 0;
+        right: 0;
+      }
+      .ribbon-tr::before {
+        top: 30px;
+        right: 30px;
+      }
+      .ribbon-tr::after {
+        top: 15px;
+        right: 20px;
+        transform: rotate(45deg);
+      }
+      .ribbon-tr .ribbon-tail {
+        top: 40px;
+        right: 40px;
+        transform: rotate(-45deg);
+      }
+      .ribbon-tr .ribbon-fold {
+        top: 35px;
+        right: 35px;
+      }
+
+      /* Bottom Left Ribbon */
+      .ribbon-bl {
+        bottom: 0;
+        left: 0;
+      }
+      .ribbon-bl::before {
+        bottom: 30px;
+        left: 30px;
+      }
+      .ribbon-bl::after {
+        bottom: 15px;
+        left: 20px;
+        transform: rotate(45deg);
+      }
+      .ribbon-bl .ribbon-tail {
+        bottom: 40px;
+        left: 40px;
+        transform: rotate(-45deg);
+      }
+      .ribbon-bl .ribbon-fold {
+        bottom: 35px;
+        left: 35px;
+      }
+
+      /* Bottom Right Ribbon */
+      .ribbon-br {
+        bottom: 0;
+        right: 0;
+      }
+      .ribbon-br::before {
+        bottom: 30px;
+        right: 30px;
+      }
+      .ribbon-br::after {
+        bottom: 15px;
+        right: 20px;
+        transform: rotate(-45deg);
+      }
+      .ribbon-br .ribbon-tail {
+        bottom: 40px;
+        right: 40px;
+        transform: rotate(45deg);
+      }
+      .ribbon-br .ribbon-fold {
+        bottom: 35px;
+        right: 35px;
+      }
+
+      .header {
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-family: "italic";
+        font-size: 2rem;
+        color: #c79c60;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+      }
+
+      .couple-names {
+        font-family: "play fair display", italic;
+        font-size: 3.8rem;
+        font-weight: 400;
+        margin: 16px 0;
+        line-height: 1.2;
+        color: #fff;
+      }
+
+      .ampersand {
+        font-size: 2.5rem;
+        margin: 10px 0;
+        color: #c79c60;
+      }
+
+      .tagline {
+        font-family: italic;
+        font-size: 1.2rem;
+        margin: 8px 0 8px;
+        color: #c79c60;
+        position: relative;
+        display: inline-block;
+      }
+
+      .tagline::before,
+      .tagline::after {
+        content: "~";
+        margin: 0 8px;
+        color: #fff;
+      }
+
+      .date {
+        font-family: italic;
+        font-size: 1.2rem;
+        color: #c79c60;
+      }
+
+      .location {
+        font-family: italic;
+        font-size: 1.2rem;
+        color: #c79c60;
+      }
+
+      /* Countdown Timer Styles */
+      .countdown-container {
+        padding: 40px;
+        background-color: transparent;
+        border-radius: 10px;
+      }
+
+      .countdown-title {
+        font-family: italic;
+        color: var(--primary-color);
+        font-size: 1.2rem;
+      }
+
+      .countdown {
+        font-family: italic;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 65px;
+      }
+
+      .countdown-number {
+        font-family: italic;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        background-color: transparent;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      .countdown-label {
+        font-size: 0.8rem;
+        color: #c79c60;
+        margin-top: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        gap: 8px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 200;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        position: relative;
+      }
+
+      .btn-attend {
+        background-color: transparent;
+        color: #c79c60;
+        border: 1px solid #fff;
+      }
+
+      .btn-attend:hover {
+        background-color: rgba(139, 69, 19, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .btn-not-attend {
+        background-color: transparent;
+        color: #c79c60;
+        border: 1px solid #fff;
+      }
+
+      .btn-not-attend:hover {
+        background-color: rgba(139, 69, 19, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .btn-calendar {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      .btn-calendar:hover {
+        background-color: #c0955a;
+        transform: translateY(-2px);
+      }
+
+      /* Calendar dropdown styles */
+      .calendar-dropdown {
+        display: none;
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fee5e6;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        z-index: 10;
+      }
+
+      .btn-calendar:hover .calendar-dropdown {
+        display: block;
+        animation: fadeIn 0.3s ease;
+      }
+
+      .calendar-option {
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-align: left;
+        color: #ae7729;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+      }
+
+      .calendar-option:hover {
+        background-color: #f5f5f5;
+      }
+
+      .calendar-option svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .response-message {
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        display: none;
+      }
+
+      .success {
+        background-color: #d4edda;
+        color: #155724;
+      }
+
+      .error {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+
+      /* Modal Styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--modal-bg);
+        z-index: 100;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal.show {
+        display: flex;
+        opacity: 1;
+      }
+
+      .modal-content {
+        background-color: white;
+        border-radius: 15px;
+        width: 90%;
+        max-width: 500px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .modal.show .modal-content {
+        transform: translateY(0);
+      }
+
+      .modal-icon {
+        font-size: 5rem;
+        color: #4caf50;
+        margin-bottom: 20px;
+        animation: bounceIn 0.6s;
+      }
+
+      .modal-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+      }
+
+      .modal-message {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+        color: var(--text-color);
+      }
+
+      .modal-btn {
+        padding: 12px 25px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .modal-btn:hover {
+        background-color: #6d360d;
+        transform: translateY(-2px);
+      }
+
+      .modal-decoration {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: rgba(212, 167, 106, 0.1);
+        z-index: -1;
+      }
+
+      .decoration-1 {
+        top: -50px;
+        right: -50px;
+      }
+
+      .decoration-2 {
+        bottom: -50px;
+        left: -50px;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes bounceIn {
+        0% {
+          transform: scale(0.1);
+          opacity: 0;
+        }
+        60% {
+          transform: scale(1.2);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--secondary-color);
+        border-radius: 5px;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .form-group textarea {
+        min-height: 80px;
+      }
+
+      @media (max-width: 480px) {
+        .form-group input,
+        .form-group textarea {
+          padding: 8px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+          align-items: flex-start;
+        }
+
+        .container {
+          margin: 10px 0;
+          width: calc(100% - 20px);
+        }
+
+        .invitation-card {
+          padding: 25px 15px;
+        }
+
+        .couple-names {
+          font-size: 3rem !important;
+          margin: 12px 0 !important;
+        }
+
+        .countdown-container {
+          padding: 20px !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .couple-names {
+          font-size: 3.5rem !important;
+          margin: 6px 0 !important;
+        }
+
+        .tagline .date,
+        .location {
+          font-size: 1.2rem !important;
+        }
+
+        .countdown-item {
+          min-width: 40px !important;
+        }
+
+        .btn {
+          padding: 8px 10px !important;
+          font-size: 0.85rem !important;
+        }
+      }
+
+      /* Very small devices (e.g., iPhone 5/SE) */
+      @media (max-width: 320px) {
+        .couple-names {
+          font-size: 2.2rem !important;
+        }
+
+        .tagline {
+          font-size: 0.9rem !important;
+        }
+
+        .countdown-number {
+          font-size: 1rem !important;
+        }
+
+        .countdown-label {
+          font-size: 0.6rem !important;
+        }
+      }
+      .modal-content {
+        padding: 20px;
+      }
+
+      .modal-title {
+        font-size: 1.5rem;
+      }
+
+      .modal-message {
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="invitation-card">
+        <div class="header">
+          <h1>Save The Date</h1>
+        </div>
+
+        <div class="couple-names">
+          <div>Victory</div>
+          <div class="ampersand">&</div>
+          <div>Odam</div>
+        </div>
+
+        <div class="tagline">Two Times The Joy</div>
+
+        <div class="date">
+          SUNDAY,<br />
+          DECEMBER, 20TH 2025
+        </div>
+
+        <div class="location">Lagos, NIGERIA</div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-container">
+          <div class="countdown" id="countdown">
+            <div class="countdown-item">
+              <div class="countdown-number" id="days">00</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="hours">00</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="minutes">00</div>
+              <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="seconds">00</div>
+              <div class="countdown-label">Seconds</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-buttons">
+          <!-- RSVP Form (hidden by default) -->
+          <div id="rsvpForm" style="display: none; width: 100%">
+            <form id="weddingRsvp">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="from_name"
+                  placeholder="Your Full Name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="from_email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  placeholder="Any special notes?"
+                ></textarea>
+              </div>
+              <input type="hidden" name="attending" id="attendanceStatus" />
+              <button type="submit" class="btn btn-attend">
+                Submit Response
+              </button>
+            </form>
+          </div>
+
+          <!-- Original Buttons (now trigger form display) -->
+          <button class="btn btn-attend" id="attendBtn">
+            I'll definitely be there
+          </button>
+
+          <button class="btn btn-not-attend" id="notAttendBtn">
+            My heart's with you, even<br />
+            if I can't be there
+          </button>
+
+          <button class="btn btn-calendar" id="calendarBtn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"
+              />
+            </svg>
+            Add to Calendar
+            <div class="calendar-dropdown">
+              <a href="#" class="calendar-option" id="googleCalendar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#ae7729"
+                >
+                  <path
+                    d="M12.545 10.239v3.821h5.445c-0.712 2.315-2.647 3.972-5.445 3.972-3.332 0-6.033-2.701-6.033-6.032s2.701-6.032 6.033-6.032c1.498 0 2.866 0.549 3.921 1.453l2.814-2.814c-1.786-1.664-4.153-2.675-6.735-2.675-5.522 0-10 4.479-10 10s4.478 10 10 10c8.396 0 10-7.524 10-10 0-0.668-0.068-1.293-0.182-1.879h-9.818z"
+                  />
+                </svg>
+                Google
+              </a>
+              <a href="#" class="calendar-option" id="outlookCalendar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#ae7729"
+                >
+                  <path
+                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1 17v-5h-1v-1h1v-1c0-1.104.896-2 2-2h1v1h-1c-.552 0-1 .448-1 1v1h1.5l-1 1h-1.5v5h-1zm7 0h-1v-5h-1v-1h1v-1c0-1.104.896-2 2-2h1v1h-1c-.552 0-1 .448-1 1v1h1.5l-1 1h-1.5v5h-1z"
+                  />
+                </svg>
+                Outlook
+              </a>
+              <a href="#" class="calendar-option" id="appleCalendar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="#ae7729"
+                >
+                  <path
+                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53-1.71-2.48-3-7.01-1.25-10.07.87-1.52 2.43-2.48 4.11-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83m-5.03-14.4c.78-1.01 1.26-2.33 1.08-3.6-1.2.05-2.67.81-3.53 1.82-.78.93-1.4 2.42-1.17 3.81 1.34.1 2.71-.68 3.62-1.83"
+                  />
+                </svg>
+                Apple
+              </a>
+            </div>
+          </button>
+        </div>
+
+        <div id="responseMessage" class="response-message"></div>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+      <div class="modal-content">
+        <div class="modal-decoration decoration-1"></div>
+        <div class="modal-decoration decoration-2"></div>
+        <div class="modal-icon">✓</div>
+        <h2 class="modal-title">Thank You!</h2>
+        <p class="modal-message">
+          Your response has been successfully recorded. We look forward to
+          celebrating with you physically or otherwise!
+        </p>
+        <button class="modal-btn" id="closeModal">Great!</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // EmailJS configuration
+        const serviceID = "service_slwjl4g";
+        const templateID = "template_ex718tq";
+
+        // DOM Elements
+        const attendBtn = document.getElementById("attendBtn");
+        const notAttendBtn = document.getElementById("notAttendBtn");
+        const googleCalendar = document.getElementById("googleCalendar");
+        const outlookCalendar = document.getElementById("outlookCalendar");
+        const appleCalendar = document.getElementById("appleCalendar");
+        const successModal = document.getElementById("successModal");
+        const rsvpForm = document.getElementById("rsvpForm");
+        const weddingForm = document.getElementById("weddingRsvp");
+        const attendanceStatus = document.getElementById("attendanceStatus");
+        const closeModal = document.getElementById("closeModal");
+
+        // Countdown Timer
+        function updateCountdown() {
+          const weddingDate = new Date("December 19, 2025 00:59:00").getTime();
+          const now = new Date().getTime();
+          const distance = weddingDate - now;
+
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (distance % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          document.getElementById("days").textContent = days
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("hours").textContent = hours
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("minutes").textContent = minutes
+            .toString()
+            .padStart(2, "0");
+          document.getElementById("seconds").textContent = seconds
+            .toString()
+            .padStart(2, "0");
+
+          if (distance < 0) {
+            clearInterval(countdownTimer);
+            document.getElementById("countdown").innerHTML =
+              '<div style="font-size: 1.5rem; color: var(--primary-color);">The wedding has arrived!</div>';
+          }
+        }
+
+        // Initialize countdown
+        updateCountdown();
+        const countdownTimer = setInterval(updateCountdown, 1000);
+
+        // Show RSVP Form with attendance status
+        function showRsvpForm(isAttending) {
+          attendanceStatus.value = isAttending ? "Attending" : "Not Attending";
+          rsvpForm.style.display = "block";
+          rsvpForm.scrollIntoView({ behavior: "smooth" });
+
+          // Hide the original buttons
+          attendBtn.style.display = "none";
+          notAttendBtn.style.display = "none";
+        }
+
+        // Form Handling
+        function showRsvpForm(willAttend) {
+          document.getElementById("attendanceStatus").value = willAttend
+            ? "Attending"
+            : "Not Attending";
+          document.getElementById("rsvpForm").style.display = "block";
+
+          // Scroll to form for mobile users
+          document
+            .getElementById("rsvpForm")
+            .scrollIntoView({ behavior: "smooth" });
+        }
+
+        document
+          .getElementById("weddingRsvp")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Send form data to EmailJS
+            emailjs.sendForm("service_slwjl4g", "template_ex718tq", this).then(
+              function () {
+                showSuccessModal();
+                document.getElementById("rsvpForm").style.display = "none";
+              },
+              function (error) {
+                alert("Failed to send: " + JSON.stringify(error));
+              }
+            );
+          });
+
+        // Event listeners for attendance buttons
+        attendBtn.addEventListener("click", () => showRsvpForm(true));
+        notAttendBtn.addEventListener("click", () => showRsvpForm(false));
+
+        // Show success modal
+        function showSuccessModal() {
+          successModal.classList.add("show");
+          document.body.style.overflow = "hidden";
+        }
+
+        // Close modal
+        function closeSuccessModal() {
+          successModal.classList.remove("show");
+          document.body.style.overflow = "auto";
+        }
+
+        // Calendar event details
+        const event = {
+          title: "Victory & Odams's Big Day",
+          description:
+            "Join us as we celebrate our love and begin our journey together as husband and wife!",
+          location: "Lagos, Nigeria",
+          startTime: "2025-12-20T00:00:00",
+          endTime: "2025-12-20T23:59:00",
+        };
+
+        // Add to Google Calendar
+        function addToGoogleCalendar() {
+          const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+            event.title
+          )}&dates=20260211/20260211&details=${encodeURIComponent(
+            event.description
+          )}&location=${encodeURIComponent(event.location)}`;
+          window.open(googleCalendarUrl, "_blank");
+        }
+
+        // Add to Outlook Calendar
+        function addToOutlookCalendar() {
+          const outlookCalendarUrl = `https://outlook.live.com/owa/?path=/calendar/action/compose&rru=addevent&subject=${encodeURIComponent(
+            event.title
+          )}&startdt=2026-02-11T12:00:00&enddt=2026-02-11T23:59:00&body=${encodeURIComponent(
+            event.description
+          )}&location=${encodeURIComponent(event.location)}`;
+          window.open(outlookCalendarUrl, "_blank");
+        }
+
+        // Add to Apple Calendar (iCal download)
+        function addToAppleCalendar() {
+          const icalContent = [
+            "BEGIN:VCALENDAR",
+            "VERSION:2.0",
+            "BEGIN:VEVENT",
+            `SUMMARY:${event.title}`,
+            `DESCRIPTION:${event.description}`,
+            `LOCATION:${event.location}`,
+            "DTSTART:20260211",
+            "DTEND:20260211",
+            "END:VEVENT",
+            "END:VCALENDAR",
+          ].join("\n");
+
+          const icalBlob = new Blob([icalContent], {
+            type: "text/calendar;charset=utf-8",
+          });
+          const icalUrl = URL.createObjectURL(icalBlob);
+
+          const downloadLink = document.createElement("a");
+          downloadLink.href = icalUrl;
+          downloadLink.download = "Victory&Odam's-Wedding.ics";
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+        }
+
+        // Event listeners
+        attendBtn.addEventListener("click", () => handleResponse(true));
+        notAttendBtn.addEventListener("click", () => handleResponse(false));
+        googleCalendar.addEventListener("click", (e) => {
+          e.preventDefault();
+          addToGoogleCalendar();
+        });
+        outlookCalendar.addEventListener("click", (e) => {
+          e.preventDefault();
+          addToOutlookCalendar();
+        });
+        appleCalendar.addEventListener("click", (e) => {
+          e.preventDefault();
+          addToAppleCalendar();
+        });
+        closeModal.addEventListener("click", closeSuccessModal);
+
+        // Close modal when clicking outside
+        successModal.addEventListener("click", (e) => {
+          if (e.target === successModal) {
+            closeSuccessModal();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
